@@ -4,4 +4,5 @@
 
 
 | # | Title | Solution | Difficulty |
-| 1 |  [Palindrome-number](https://leetcode.com/problems/palindrome-number/) | [Java](https://github.com/Satya6608/leetpractice/blob/main/java_dsa/palindrome-number.js) | Easy | |
+|---| ----- | -------- | ---------- |
+| 1 |  [Palindrome-number](https://leetcode.com/problems/palindrome-number/) | [Java](https://github.com/Satya6608/leetpractice/tree/main/9-palindrome-numbers) | Easy | |
