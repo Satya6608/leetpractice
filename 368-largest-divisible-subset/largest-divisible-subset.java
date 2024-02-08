@@ -1,33 +1,33 @@
 class Solution {
     public List<Integer> largestDivisibleSubset(int[] nums) {
-        int n = nums.length;
-        int[] count = new int[n];
-        int[] pre = new int[n];
-
+         int[] dp = new int[nums.length];
+        Arrays.fill(dp,-1);
         Arrays.sort(nums);
-        int max = 0, index = -1;
-        for(int i =0; i<n; i++){
-            count[i] = 1;
-            pre[i] = -1;
-            for(int j = i-1; j>=0; j--){
-                if(nums[i] % nums[j] == 0){
-                    if(1+count[j]> count[i]){
-                        count[i] = count[j]+1;
-                        pre[i] = j;
-                    }
+        int[] hash = new int[nums.length];
+        int maxi = -1;
+        int lastIndex = 0;
+        for(int index=0;index<nums.length;index++){
+            hash[index] = index;
+            for(int col=0;col<index;col++){
+                
+                if(nums[index]%nums[col]==0 && 1 + dp[col] > dp[index]){
+                    dp[index] = 1 + dp[col];
+                    hash[index] = col;
                 }
             }
-            if(count[i] > max){
-                max = count[i];
-                index = i;
+            if(dp[index]>maxi){
+                maxi = dp[index];
+                lastIndex = index;
             }
-        }
-        List<Integer> result = new ArrayList<>();
+        } 
+        List<Integer> lst = new ArrayList<Integer>();
+        lst.add(nums[lastIndex]);
+        while(hash[lastIndex]!=lastIndex){
+            lastIndex = hash[lastIndex];
+            lst.add(nums[lastIndex]);
+            
 
-        while(index != -1){
-            result.add(nums[index]);
-            index = pre[index];
         }
-        return result;
+        return lst;
     }
 }
