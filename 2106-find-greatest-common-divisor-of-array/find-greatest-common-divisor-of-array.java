@@ -1,12 +1,19 @@
 class Solution {
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        int gcd = 1;
-        for(int i =1; i<=nums[0]; i++){
-            if(nums[0] % i == 0 && nums[nums.length-1] % i ==0){
-                gcd = i;
-            }
+        int max=0, min=1001;
+        for (int val:nums) {
+            if (max<val) max=val;
+            if (min>val) min=val;
         }
-        return gcd;
+        return ekub(max,min);
+    }
+
+    public static int ekub(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
