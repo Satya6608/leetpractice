@@ -1,36 +1,22 @@
 class Solution {
-    Integer memo[][][];
     
     public int cherryPickup(int[][] grid) {
-        int rows = grid.length;
-        int cols = grid[0].length;
-        memo = new Integer[rows+1][cols+1][cols+1];
-        return helper(grid, 0, 0, cols-1);
-    }
-    
-    public int helper(int[][] grid, int currRow, int robotACol, int robotBCol) {
-        
-        if(robotACol < 0 || robotBCol < 0 || robotACol >= grid[0].length || robotBCol >= grid[0].length) return 0;
-        
-        if(currRow == grid.length) return 0;
-        
-        if(memo[currRow][robotACol][robotBCol] != null)
-            return memo[currRow][robotACol][robotBCol];
-        
-        int result = 0;
-        result += grid[currRow][robotACol];
-        result += grid[currRow][robotBCol];
-        
-        int max = 0;
-        for(int x=robotACol-1;x<=robotACol+1;x++) {
-            for(int y=robotBCol-1;y<=robotBCol+1;y++) {
-                if(x < y) { // they should not cross
-                    max = Math.max(max, helper(grid, currRow+1, x, y));
+       int C = grid[0].length;
+    int[][] dp = new int[C][C], old = new int[C][C];
+    for(int r = grid.length - 1; r >= 0; r--) {
+        for(int c1 = Math.min(r, C - 1); c1 >= 0; c1--) {
+            for(int c2 = Math.max(c1, C - 1 - r); c2 < C; c2++) {
+                int max = 0;
+                for(int i = c1 - 1; i <= c1 + 1; i++) {
+                    for(int j = c2 - 1; j <= c2 + 1; j++) {
+                        if(i >= 0 && i < C && j >= 0 && j < C && i <= j) max = Math.max(max, old[i][j]);
+                    }
                 }
+                dp[c1][c2] = max + grid[r][c1] + (c1 == c2 ? 0 : grid[r][c2]);
             }
         }
-        
-        result += max;
-        return memo[currRow][robotACol][robotBCol] = result;
+        int[][] temp = dp; dp = old; old = temp;
+    }
+    return old[0][C - 1];
     }
 }
