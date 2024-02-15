@@ -1,45 +1,24 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-          List<List<Integer>> result = new ArrayList<>();
-        Stack<Triple> stack = new Stack<>();
-        stack.push(new Triple(0, target, new ArrayList<>()));
+          List<List<Integer>>ll = new ArrayList<>();
+        ArrayList<Integer> l = new ArrayList<Integer>();
+        coin_change(candidates,target,l,0,ll);
+        return ll;
 
-        while (!stack.isEmpty()) {
-            Triple current = stack.pop();
-            int currentIndex = current.index;
-            int currentTarget = current.target;
-            List<Integer> currentCombination = current.combination;
-
-            while (currentIndex < candidates.length) {
-                int currentCandidate = candidates[currentIndex];
-
-                if (currentCandidate == currentTarget) {
-                    currentCombination.add(currentCandidate);
-                    result.add(new ArrayList<>(currentCombination));
-                    currentCombination.remove(currentCombination.size() - 1);
-                } else if (currentCandidate < currentTarget) {
-                    currentCombination.add(currentCandidate);
-                    stack.push(new Triple(currentIndex, currentTarget - currentCandidate, new ArrayList<>(currentCombination)));
-                    currentCombination.remove(currentCombination.size() - 1);
-                }
-
-                currentIndex++;
-            }
-        }
-
-        return result;
     }
-
-    // MAKING TRIPLE TYPE
-    private static class Triple {
-        int index;
-        int target;
-        List<Integer> combination;
-
-        public Triple(int index, int target, List<Integer> combination) {
-            this.index = index;
-            this.target = target;
-            this.combination = combination;
+    public static void coin_change(int candidates[], int target, ArrayList<Integer> l, int idx, List<List<Integer>> ll){
+        if(target==0){
+            //System.out.println(l);
+            ll.add(new ArrayList<>(l));
+            return;
+        }
+        if(target<0){
+            return;
+        }
+        for(int i =idx;i<candidates.length;i++){
+            l.add(candidates[i]);
+            coin_change(candidates,target-candidates[i],l,i,ll);
+            l.remove(l.size()-1);
         }
     }
 }
