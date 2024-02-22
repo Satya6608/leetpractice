@@ -1,15 +1,21 @@
-var num = String(12345);
-var new_num = num.split('').reverse();
-/* console.log(new_num); */
-
-var rev_num = '';
-rev_num = new_num.join('')
-console.log(+rev_num)
-
-var num = 123456789;
-var rev_num = 0;
-while(num > 0){
-rev_num = (rev_num * 10) + (num%10);
- num = parseInt(num/10);
+// using revese a string 
+function revString(s){
+    let rev = s.split('').reverse().join('');
+   return rev;
 }
-console.log(rev_num)
+let st = 'racecar'
+console.log(revString(st));
+
+// reverse giveing number 
+
+function reverseNumber(n){
+    let reverse = 0;
+    while(n > 0){
+        reverse = (reverse * 10) + (n%10);
+        n = Math.floor(n/10);
+        // n = parseInt(n/10);
+    }
+    return reverse
+}
+var n = 12345678909
+console.log(reverseNumber(n))
