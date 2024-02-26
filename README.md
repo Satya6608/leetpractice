@@ -5,6 +5,14 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
-| 1 |  [Palindrome-number](https://leetcode.com/problems/1palindrome-number/) | [Java](https://github.com/Satya6608/leetpractice/tree/main/java_dsa/9-palindrome-numbers) | Easy |
-| 2 | [Coin-change](https://leetcode.com/problems/coin-change) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_dsa/coin-change) | Medium |
-| 3 |[Median-of-two-sorted-array](https://leetcode.com/problems/median-of-two-sorted-array) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/median-of-two-sored-array) | Hard |
+| 1 |  [Two-Sum](https://leetcode.com/problems/two-sum) | [Java-Script](https://github.com/Satya6608/leetpractice/tree/main/js/two-sum) | Easy |
+| 2 | [Add-Two-Numbers](https://leetcode.com/problems/add-two-numbers) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_dsa/add-two-numbers) | Medium |
+| 3 |[Longest-Sub-String](https://leetcode.com/problems/longest-substring-without-repeating-characters) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/longest-substring-without-repeating-characters) | Medium |
+| 4 |[Median-of-two-sorted-array](https://leetcode.com/problems/median-of-two-sorted-array) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/median-of-two-sored-array) | Hard |
+| 5 |[Longest-Palindromic-Substring](https://leetcode.com/problems/longest-palindromic-substring) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/longest-palindromic-substring) | Medium |
+| 6 |[Zigzag-Conversion](https://leetcode.com/problems/zigzag-conversion) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/zigzag-conversion) | Medium |
+| 7 |[Reverse-Integer](https://leetcode.com/problems/reverse-integer) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/reverse-integer) | Medium |
+| 8 |[String-To-Integer-atoi](https://leetcode.com/problems/string-to-integer-atoi) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_das/string-to-integer-atoi) | Medium |
+| 9 |[Palindrome-Number](https://leetcode.com/problems/palindrome-number) | [Java-Script](https://github.com/satya6608/leetpractice/tree/main/js/palindrome-number) | Easy |
+| 10 |[Regular-Expression-Matching](https://leetcode.com/problems/regular-expression-matching) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_dsa/regular-expression-matching) | Hard |
+| 11 |[Container-With-Most-Water](https://leetcode.com/problems/container-with-most-water) | [Java](https://github.com/satya6608/leetpractice/tree/main/java_dsa/container-with-most-water) | Hard |
