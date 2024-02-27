@@ -14,5 +14,5 @@
 | 7 |[Reverse-Integer](https://leetcode.com/problems/reverse-integer) | [Java](https://github.com/satya6608/leetpractice/blob/main/Java_dsa/reverse-integer.java) | Medium |
 | 8 |[String-To-Integer-atoi](https://leetcode.com/problems/string-to-integer-atoi) | [Java](https://github.com/Satya6608/leetpractice/blob/main/Java_dsa/string-to-integer-atoi.java) | Medium |
 | 9 |[Palindrome-Number](https://leetcode.com/problems/palindrome-number) | [Java-Script](https://github.com/satya6608/leetpractice/blob/main/Js/palindrome-number.js) | Easy |
-| 10 |[Regular-Expression-Matching](https://leetcode.com/problems/regular-expression-matching) | [Java](https://github.com/satya6608/leetpractice/blob/main/Java_dsa/regular-expression-matching.java) | Hard |
+| 10 |[Regular-Expression-Matching](https://leetcode.com/problems/regular-expression-matching) | [CPP](https://github.com/satya6608/leetpractice/blob/main/Java_dsa/regular-expression-matching.cpp) | Hard |
 | 11 |[Container-With-Most-Water](https://leetcode.com/problems/container-with-most-water) | [Java](https://github.com/satya6608/leetpractice/blob/main/Java_dsa/container-with-most-water.java) | Hard |
