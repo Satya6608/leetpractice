@@ -3,21 +3,24 @@
  * @return {number}
  */
 var maxFrequencyElements = function(nums) {
-     const map = new Map();
-        for (const num of nums) {
-            map.set(num, (map.get(num) || 0) + 1);
+     const map = new Map()
+
+    for(const num of nums) {
+        map.set(num, (map.get(num) || 0) + 1)
+    }
+
+    let mx = -1, mxNum = 0
+
+    for(const val of map.values()) {
+        if(val === mx) {
+            mxNum++
         }
-        
-        let maxfreq = 0;
-        for (const freq of map.values()) {
-            maxfreq = Math.max(maxfreq, freq);
+
+        if(val > mx) {
+            mxNum = 1
+            mx = val
         }
-        
-        let count = 0;
-        for (const freq of map.values()) {
-            if (freq === maxfreq) {
-                count += maxfreq;
-            }
-        }
-        return count;
+    }
+
+    return mx * mxNum
 };
