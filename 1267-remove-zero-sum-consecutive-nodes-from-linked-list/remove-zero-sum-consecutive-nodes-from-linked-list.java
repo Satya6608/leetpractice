@@ -10,32 +10,24 @@
  */
 class Solution {
     public ListNode removeZeroSumSublists(ListNode head) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        int prefixSum = 0;
-
-        Map<Integer, ListNode> prefixSumToNode = new HashMap<>();
-
-        for(ListNode current = dummy; current != null; current = current.next){
-          prefixSum += current.val;
-
-          if(prefixSumToNode.containsKey(prefixSum)){
-            ListNode prev = prefixSumToNode.get(prefixSum);
-            ListNode toRemove = prev.next;
-            int p = prefixSum + (toRemove != null ? toRemove.val : 0);
-
-            while(p != prefixSum){
-              prefixSumToNode.remove(p);
-              toRemove = toRemove.next;
-              p += (toRemove != null ? toRemove.val : 0);
+         if(head == null)return head;
+        ListNode prev = null;
+        ListNode cur = head;
+        int  running_sum=0;
+        while(cur!=null)
+        {
+            running_sum += cur.val;
+            if(running_sum==0)
+            {
+                if(prev == null)
+                head = cur.next;
+                else
+                prev.next = cur.next;
+                return removeZeroSumSublists(head);
             }
-
-            prev.next = current.next;
-          }else{
-            prefixSumToNode.put(prefixSum, current);
-          }
+            cur = cur.next;
         }
-        return dummy.next;
+        head.next = removeZeroSumSublists(head.next);
+        return head;
     }
 }
