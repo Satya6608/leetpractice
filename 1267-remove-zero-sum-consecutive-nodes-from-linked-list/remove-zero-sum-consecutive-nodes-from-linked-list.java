@@ -10,6 +10,7 @@
  */
 class Solution {
     public ListNode removeZeroSumSublists(ListNode head) {
+      if(head == null)return head;
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
