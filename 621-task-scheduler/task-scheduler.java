@@ -1,5 +1,6 @@
 class Solution {
     public int leastInterval(char[] tasks, int n) {
+      if (n == 0) return tasks.length;
         int[] freq = new int[26];
         for(char task : tasks) freq[task - 'A']++;
 
