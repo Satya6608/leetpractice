@@ -10,6 +10,8 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
+      if (head == null || head.next == null)
+            return true;
         List<Integer> lst = new ArrayList();
         while(head != null){
           lst.add(head.val);
